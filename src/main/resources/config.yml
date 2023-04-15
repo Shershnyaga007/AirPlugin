@@ -1,0 +1,54 @@
+bossbar:
+  title: "&eВоздух: <air>/<max air>"
+  title no air: "&cНет воздуха!"
+  regeneration title: "&aВоздух: <air>/<max air>"
+  infinite air title: "&eВоздух: &a∞"
+  color: BLUE # PINK, BLUE, RED, GREEN, YELLOW, PURPLE, WHITE
+  style: SOLID # SOLID, SEGMENTED_6, SEGMENTED_10, SEGMENTED_12, SEGMENTED_20
+  darken sky: off
+  fog: off
+
+# Использование воздуха в секунду = <default> + <damage multiplier> * (1 - <здоровье> / <максимальное здоровье>) + эффекты стрел
+consumption rate:
+  default: 1
+  damage multiplier: 3 # отключить = 0
+  regeneration: 10
+  regeneration leakage: on # Будет ли учитываться утечка воздуха при зарядке
+  
+effects:
+  wear sound: wear_balloon # В ресурспаке получится air:wear_balloon (air - дефолт). Можно написать "planetmc:wear_balloon", тогда так и будет planetmc:wear_balloon
+  wear particle: CLOUD # Возможные значения: https://papermc.io/javadocs/paper/1.18/org/bukkit/Particle.html
+  wear particle count: 20
+  arrow hit: arrow_hit # В ресурспаке получится air:arrow_hit
+  arrow hit particle: CLOUD # Возможные значения: https://papermc.io/javadocs/paper/1.18/org/bukkit/Particle.html
+  arrow hit particle count: 150
+  arrow hit title: ""
+  arrow hit subtitle: "&cу тебя дырка в жопе"
+  arrow hit title fade in: 5
+  arrow hit title stay: 25
+  arrow hit title fade out: 10
+  lodestone particle: VILLAGER_HAPPY # Возможные значения: https://papermc.io/javadocs/paper/1.18/org/bukkit/Particle.html
+  lodestone particle count: 1
+  lodestone particle frequency: 1
+
+balloon custom model data:
+  # Максимальное количество урона. Это чтобы игроки не могли сами в себя 1000 стрел запустить и
+  # получить с баллона с CustomModelData=1 баллон с CustomModelData=100000000 (уже с другой текстурой)
+  max damage: 99
+  
+  # Если в баллоне максимум = 1000 воздуха, его CustomModelData = 1.
+  # Если на нём урон (от стрел) 5, у него будет CustomModelData = 1 + 5 = 6
+  # Максимальное CustomModelData при уроне 99 и больше = 1 + 99 = 100
+  1000: 1
+  # Если в баллоне максимум = 5000 воздуха (это например улучшенный баллон), его CustomModelData = 101.
+  # Если на нём урон (от стрел) 5, у него будет CustomModelData = 101 + 5 = 106
+  # Максимальное CustomModelData при уроне 100 и больше = 101 + 99 = 200
+  5000: 101
+  
+  # Если в баллоне максимум = другое количество воздуха, его CustomModelData = 51064.
+  # Если на нём урон (от стрел) 5, у него будет CustomModelData = 51064 + 5 = 51069
+  # Максимальное CustomModelData при уроне 100 и больше = 51064 + 99 = 51163
+  default: 51064
+
+no air damage: 1
+lodestone distance: 15

@@ -1,0 +1,13 @@
+name: Air
+version: '${project.version}'
+main: me.shershnyaga.air.AirPlugin
+api-version: 1.18
+authors: [ Shershnyaga_ ]
+commands:
+  air:
+    description: Включение/выключение режима бесконечного воздуха
+    usage: /<command> <args> <player> <on/off>
+permissions:
+  air.admin:
+    default: op
+    description: Позволяет управлять плагином Air
