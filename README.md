@@ -6,9 +6,8 @@ It also adds new arrows that are capable of piercing your oxygen tank and causin
 
 ```
 To give an arrow with a specific oxygen consumption rate, use the command:
-`/give Dynomaik minecraft:arrow{PublicBukkitValues:{"air:balloon_consumption_rate_booster":<rate>f}}`
+**/give Dynomaik minecraft:arrow{PublicBukkitValues:{"air:balloon_consumption_rate_booster":<rate>f}}**
 
 Replace "<rate>" with the desired amount of oxygen consumed per second. For example, to give an arrow with a consumption rate of 20 oxygen per second, use:
-
-`/give Dynomaik minecraft:arrow{PublicBukkitValues:{"air:balloon_consumption_rate_booster":20f}}`
+**/give Dynomaik minecraft:arrow{PublicBukkitValues:{"air:balloon_consumption_rate_booster":20f}}**
 ```
